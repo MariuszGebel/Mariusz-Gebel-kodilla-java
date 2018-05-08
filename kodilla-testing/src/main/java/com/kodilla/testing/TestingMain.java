@@ -6,7 +6,7 @@ import com.kodilla.testing.calculator.Calculator;
 public class TestingMain {
     public static void main(String[] args) {
         //System.out.println("Moduł 6. Wprowadzenie do testowania oprogramowania");
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        SimpleUser simpleUser = new SimpleUser("theForumUser", "Jan Kowalski");
 
         String result = simpleUser.getUsername();
 
