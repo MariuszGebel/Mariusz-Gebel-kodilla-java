@@ -9,8 +9,6 @@ import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.time.LocalDate;
 import java.time.Period;
