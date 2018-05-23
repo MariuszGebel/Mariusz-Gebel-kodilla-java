@@ -30,6 +30,7 @@ public class StatisticsTestSuite {
     @Test
     public void testAvrPostsZero(){
         //Given
+
         Statistics statisticsMock = mock(Statistics.class);
         int posts = 0;
         int comments = 2000;
