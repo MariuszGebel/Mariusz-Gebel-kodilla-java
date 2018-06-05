@@ -29,4 +29,25 @@ public class FlightDirectory {
     public List<Flights> getList() {
         return new ArrayList<>(theFlightsList);
     }
+
+    public void flightsFrom(String town) {
+        getList().stream()
+                .filter(flights -> flights.getFlightFrom().equals(town))
+                .forEach(System.out::println);
+    }
+
+    public void flightsTo(String town) {
+        getList().stream()
+                .filter(flights -> flights.getFlightTo().equals(town))
+                .forEach(System.out::println);
+    }
+
+    public void flightsVia(String townFrom, String townTo, String townVia) {
+        getList().stream()
+                .filter(flights -> flights.getFlightFrom().equals(townFrom)
+                        || flights.getFlightTo().equals(townTo))
+                .filter(flights -> flights.getFlightTo().equals(townVia)
+                        || flights.getFlightFrom().equals(townVia))
+                .forEach(System.out::println);
+    }
 }

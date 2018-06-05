@@ -7,23 +7,14 @@ public class Application {
         FlightDirectory theFlightDirectory = new FlightDirectory();
 
         System.out.println("ALL FLIGHTS FROM WARAW");
-        theFlightDirectory.getList().stream()
-                .filter(flights -> flights.getFlightFrom().equals(WARSAW))
-                .forEach(System.out::println);
+        theFlightDirectory.flightsFrom(WARSAW);
 
         System.out.println();
         System.out.println("ALL FLIGHTS TO WROCLAW");
-        theFlightDirectory.getList().stream()
-                .filter(flights -> flights.getFlightTo().equals(WROCLAW))
-                .forEach(System.out::println);
+        theFlightDirectory.flightsTo(WROCLAW);
 
         System.out.println();
         System.out.println("ALL FLIGHTS FROM WARSAW TO KATOWICE VIA RADOM");
-        theFlightDirectory.getList().stream()
-                .filter(flights -> flights.getFlightFrom().equals(WARSAW)
-                || flights.getFlightTo().equals(KATOWICE))
-                .filter(flights -> flights.getFlightTo().equals(RADOM)
-                        || flights.getFlightFrom().equals(RADOM))
-                .forEach(System.out::println);
+        theFlightDirectory.flightsVia(WARSAW, KATOWICE, RADOM);
     }
 }
