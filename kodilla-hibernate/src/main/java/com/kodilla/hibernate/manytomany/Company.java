@@ -5,6 +5,19 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Company.retrieveThreeLettersName",
+        query = "FROM Company WHERE " +
+                "name = :CNAME"
+)
+
+@NamedNativeQuery(
+        name = "Company.retrieveThreeLettersCompanyName",
+        query = "SELECT * FROM COMPANIES " +
+                "WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :THREELETTERSNAME",
+        resultClass = Company.class
+)
+// "WHERE COMPANY_NAME LIKE :THREELETTERSNAME",
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
