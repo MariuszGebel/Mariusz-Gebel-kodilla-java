@@ -16,6 +16,7 @@ public class FirstChallenge {
         } catch (ArithmeticException e) {
             System.out.println("Division by zero is not allowed!");
         } finally {
+            System.out.println("Division A by B was done or not!");
 
         }
 

@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
-public class Triangle implements Shape {
+public class Square implements Shape {
     @Override
     public String getShapeName() {
-        return "This is a triangle.";
+        return "This is a square.";
     }
 }
