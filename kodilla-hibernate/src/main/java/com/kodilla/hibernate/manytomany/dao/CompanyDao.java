@@ -18,4 +18,7 @@ public interface CompanyDao extends CrudRepository<Company, Integer> {
     //DLA ZAPYTANIA SQL
     @Query(nativeQuery = true)
     List<Company> retrieveThreeLettersCompanyName(@Param("THREELETTERSNAME") String name);
+
+    @Query
+    List<Company> retriveCampanyNameContaining(@Param("COMPANYNAME") String name);
  }

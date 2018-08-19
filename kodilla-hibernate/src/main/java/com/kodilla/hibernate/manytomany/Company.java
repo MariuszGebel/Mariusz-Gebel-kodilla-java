@@ -5,11 +5,19 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Company.retrieveThreeLettersName",
-        query = "FROM Company WHERE " +
-                "name = :CNAME"
-)
+@NamedQueries({
+    @NamedQuery(
+            name = "Company.retrieveThreeLettersName",
+            query = "FROM Company WHERE " +
+                    "name = :CNAME"
+    ),
+
+    @NamedQuery(
+            name = "Company.retriveCampanyNameContaining",
+            query = "FROM Company WHERE name LIKE concat('%', :COMPANYNAME, '%')"
+    )
+})
+
 
 @NamedNativeQuery(
         name = "Company.retrieveThreeLettersCompanyName",
@@ -17,7 +25,7 @@ import java.util.List;
                 "WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :THREELETTERSNAME",
         resultClass = Company.class
 )
-// "WHERE COMPANY_NAME LIKE :THREELETTERSNAME",
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
